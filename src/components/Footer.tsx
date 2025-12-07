@@ -12,19 +12,19 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-serif font-semibold">
-              Sakshi<span className="text-accent">Singh</span>
+              Sakshi Singh<span className="text-accent"> Makeovers</span>
             </h3>
             <p className="text-background/70 leading-relaxed">
               Where Beauty Meets Perfection. Professional makeup artistry for your most special moments.
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com/sakshisinghmakeovers"
+                href="https://www.instagram.com/sakshisinghmakeovers?igsh=d281MWV6cGY1bnJz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors group"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>

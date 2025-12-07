@@ -37,10 +37,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/20 backdrop-blur-sm mb-6 border border-accent/30"
           >
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">Premium Makeup Artist</span>
+            <Sparkles className="w-4 h-4 text-accent animate-pulse" />
+            <span className="text-sm font-medium text-accent tracking-wide uppercase">Sakshi Singh Makeovers</span>
           </motion.div>
 
           <motion.h1
