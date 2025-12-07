@@ -45,8 +45,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
-              Sakshi<span className="text-accent">Singh</span>
+            <span className="text-2xl md:text-3xl font-serif font-semibold text-foreground tracking-tight">
+              Sakshi Singh<span className="text-accent"> Makeovers</span>
             </span>
           </Link>
 
@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* CTA & Social */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://instagram.com/sakshisinghmakeovers"
+              href="https://www.instagram.com/sakshisinghmakeovers?igsh=d281MWV6cGY1bnJz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -135,7 +135,7 @@ const Navbar = () => {
                   className="pt-4 flex items-center gap-4"
                 >
                   <a
-                    href="https://instagram.com/sakshisinghmakeovers"
+                    href="https://www.instagram.com/sakshisinghmakeovers?igsh=d281MWV6cGY1bnJz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
