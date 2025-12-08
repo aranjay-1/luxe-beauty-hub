@@ -66,8 +66,12 @@ const TestimonialsPreview = () => {
   };
 
   return (
-    <section className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-24 bg-background overflow-hidden relative">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -75,10 +79,14 @@ const TestimonialsPreview = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-sm font-medium text-accent tracking-widest uppercase">
-            Testimonials
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mt-4 mb-6">
+          <motion.span 
+            className="inline-block text-sm font-semibold text-accent tracking-widest uppercase px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20"
+            whileInView={{ scale: [0.9, 1] }}
+            viewport={{ once: true }}
+          >
+            ❤️ Testimonials
+          </motion.span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mt-6 mb-6">
             What Our Clients{" "}
             <span className="text-primary italic">Say</span>
           </h2>
@@ -98,9 +106,12 @@ const TestimonialsPreview = () => {
               className="text-center"
             >
               {/* Quote Icon */}
-              <div className="w-16 h-16 mx-auto mb-8 rounded-full bg-primary-light flex items-center justify-center">
-                <Quote className="w-8 h-8 text-primary" />
-              </div>
+              <motion.div 
+                className="w-20 h-20 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary-light to-accent/20 flex items-center justify-center shadow-soft"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              >
+                <Quote className="w-10 h-10 text-primary" />
+              </motion.div>
 
               {/* Quote */}
               <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8 font-serif italic">

@@ -134,6 +134,13 @@
     background-clip: text;
   }
 
+  .text-gradient-blush {
+    background: var(--gradient-blush);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .hover-lift {
     @apply transition-all duration-500 ease-out;
   }
@@ -141,6 +148,36 @@
   .hover-lift:hover {
     @apply -translate-y-2;
     box-shadow: var(--shadow-elevated);
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.4);
+  }
+
+  .image-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--background) / 0.2), transparent);
+    animation: imageShine 4s ease-in-out infinite;
+  }
+
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+                var(--gradient-gold) border-box;
   }
 }
 
@@ -224,6 +261,26 @@
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes imageShine {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--accent) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--accent) / 0.6); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Scrollbar Styling */
