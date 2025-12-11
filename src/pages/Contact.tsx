@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Instagram, Send, MessageCircle, Calendar, Clock } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const services = [
   "Bridal Makeup",
@@ -44,28 +45,47 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const { error } = await supabase.from("appointments").insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        event_date: formData.eventDate,
+        service: formData.service,
+        location: formData.location.trim() || null,
+        message: formData.message.trim() || null,
+      });
 
-    toast({
-      title: "Booking Request Sent! ✨",
-      description: "We'll get back to you within 24 hours to confirm your appointment.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      eventDate: "",
-      service: "",
-      location: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "Booking Request Sent! ✨",
+        description: "We'll get back to you within 24 hours to confirm your appointment.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        eventDate: "",
+        service: "",
+        location: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent("Hi! I'm interested in booking a makeup appointment.");
+    const message = encodeURIComponent("Hi! I'm interested in booking a makeup appointment with Sakshi Singh Makeovers.");
     window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
   };
 
@@ -135,8 +155,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:hello@sakshisingh.com" className="text-muted-foreground hover:text-accent transition-colors">
-                      hello@sakshisingh.com
+                    <a href="mailto:007sakshithakur@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">
+                      007sakshithakur@gmail.com
                     </a>
                   </div>
                 </div>
