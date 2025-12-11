@@ -86,7 +86,7 @@ const Contact = () => {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi! I'm interested in booking a makeup appointment with Sakshi Singh Makeovers.");
-    window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
+    window.open(`https://wa.me/919129292809?text=${message}`, "_blank");
   };
 
   return (
@@ -141,10 +141,10 @@ const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <div>
+                    <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <a href="tel:+919876543210" className="text-muted-foreground hover:text-accent transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+919129292809" className="text-muted-foreground hover:text-accent transition-colors">
+                      +91 91292 92809
                     </a>
                   </div>
                 </div>
@@ -167,7 +167,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Location</p>
-                    <p className="text-muted-foreground">New Delhi, India</p>
+                    <p className="text-muted-foreground">B-2107, 21st Floor, RG Luxury Homes</p>
+                    <p className="text-muted-foreground">Gautam Buddha Nagar, UP 201318</p>
                     <p className="text-sm text-muted-foreground">(Available for travel)</p>
                   </div>
                 </div>
@@ -204,7 +205,7 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="rounded-xl overflow-hidden border border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.52633258584!2d76.76356386098791!3d28.643684824188627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1702400000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923190295!2d77.06889954863452!3d28.527280408428825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sGautam%20Buddha%20Nagar%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1702400000000!5m2!1sen!2sin"
                   width="100%"
                   height="200"
                   style={{ border: 0 }}
